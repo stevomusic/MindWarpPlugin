@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+8ba3a53e1960e8bff2266e8f3dd3d002 MindWarp_artefacts/JuceLibraryCode/JuceHeader.h
+bd8c098e4e46ddbb277d1f340ce2eed0 MindWarp_artefacts/JuceLibraryCode/MindWarp_AU/PkgInfo
+5b217b16c78b6497fc616eea0d812c8d MindWarp_artefacts/JuceLibraryCode/MindWarp_Standalone/PkgInfo
+6af6b4441ead1e942e427dc53251cbc1 MindWarp_artefacts/JuceLibraryCode/MindWarp_VST3/PkgInfo
