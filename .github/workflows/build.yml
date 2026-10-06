@@ -1,0 +1,38 @@
+name: Build Mind Warp Plugin
+
+on:
+  push:
+    branches: [ main ]
+  release:
+    types: [ created ]
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install CMake
+        run: brew install cmake
+      - name: Build
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --config Release --parallel
+      - name: Upload VST3
+        uses: actions/upload-artifact@v3
+        with:
+          name: MindWarp-Mac
+          path: build/MindWarp_artefacts/Release/VST3/
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: |
+          cmake -B build -G "Visual Studio 17 2022" -A x64
+          cmake --build build --config Release --parallel
+      - name: Upload VST3
+        uses: actions/upload-artifact@v3
+        with:
+          name: MindWarp-Windows
+          path: build/MindWarp_artefacts/Release/VST3/
